@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.generation.todolist.model.Tarefa;
 
+import java.util.List;
+
 @Repository
 public interface TarefaRepository extends JpaRepository<Tarefa, Long>{
-
+    public List<Tarefa> findAllByNomeContainingIgnoreCase(String nome);
 }
